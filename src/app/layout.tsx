@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import { Providers } from '@/components/providers';
 import { Inter, Space_Grotesk } from 'next/font/google';
 
 const inter = Inter({
@@ -29,8 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("dark", inter.variable, spaceGrotesk.variable)}>
       <body className={cn("font-body antialiased")}>
-        {children}
-        <Toaster />
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

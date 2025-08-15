@@ -1,4 +1,4 @@
-import { AuthForm } from '@/components/auth-form';
+import { GoogleAuth } from '@/components/google-auth';
 import { LogoIcon } from '@/components/icons';
 import Link from 'next/link';
 
@@ -14,10 +14,10 @@ export default function AuthPage() {
               Buzz App Uganda
             </h1>
           </Link>
-          <p className="text-muted-foreground drop-shadow-sm">Welcome! Please sign in or create an account.</p>
+          <p className="text-muted-foreground drop-shadow-sm">Discover the hottest nightlife spots in Uganda</p>
         </div>
-        
-        <AuthForm />
+
+        <GoogleAuth />
 
         <p className="mt-8 text-center text-sm text-muted-foreground drop-shadow-sm">
           <Link href="/discover" className="underline hover:text-primary">

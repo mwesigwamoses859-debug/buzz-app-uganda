@@ -7,10 +7,12 @@ import { BarList } from '@/components/bar-list';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { List, Locate, Search } from 'lucide-react';
 import { RadarView } from '@/components/radar-view';
+import { AuthGuard } from '@/components/auth-guard';
 
 export default function DiscoverPage() {
   return (
-    <div className="flex h-screen w-full flex-col bg-background">
+    <AuthGuard>
+      <div className="flex h-screen w-full flex-col bg-background">
       <Header />
       <main className="flex-1 grid md:grid-cols-[400px_1fr] lg:grid-cols-[450px_1fr] overflow-hidden">
         <aside className="flex flex-col border-r border-border/40 overflow-hidden">
@@ -48,6 +50,7 @@ export default function DiscoverPage() {
           </div>
         </section>
       </main>
-    </div>
+      </div>
+    </AuthGuard>
   );
 }
